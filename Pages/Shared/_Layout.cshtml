@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]VisitTurkey</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site1.css" />
+
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">VisitTurkey</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="py-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="container py-3 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <h4>Ben Kimim?</h4>
+                <h6 class="text-small"> Marmara Ünivesitesi'nde 2. sınıf öğrencisiyim. </h6>
+
+            </div>
+            <div class="col-12 col-md d-flex align-content-center flex-wrap">
+                <h6 class="text-small mb-3 py-3">&copy;Ahmet Fatih Ay - 2021</h6>
+            </div>
+            <div class="col-6 col-md">
+                <h4>İletişim</h4>
+                <ul class="list-unstyled text-small">
+                    <li class="link-dark"><a href="https://github.com/ahmetfatihay" target="_blank" class="text-dark">Github</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/svg-turkiye-haritasi.js" asp-append-version="true"></script>
+
+    <script>
+        svgturkiyeharitasi();
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

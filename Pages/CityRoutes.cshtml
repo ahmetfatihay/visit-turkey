@@ -1,0 +1,23 @@
+﻿@page
+@model WebApplication1.Pages.MapModel
+@{
+}
+<div class="text-center">
+
+    <select id="choosen" class="form-select form-select-lg mb-3 h5" aria-label=".form-select-lg example" onchange="center(this.value)">
+        @{
+            foreach (var item in Model.Cities)
+            {
+
+                <option value='{"lat":"@item.lat","lng":"@item.lng"}' asd="@item.lng">
+                    @item.city
+                </option>
+                }
+                }
+            </select>
+</div>
+<div id="glass" class="align-middle my-3"></div>
+
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=@Model.googleMapsApiKey&callback=initMap">
+</script>
